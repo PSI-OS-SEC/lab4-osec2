@@ -2,8 +2,8 @@
 
 echo "El servidor FreeIPA debe tener acceso a Internet"
 echo "debe poder descargar e instalar paquetes,"
-echo "debe contar con todos los parches de seguridad aplicados en la fecha de calificació,"
-echo "debe tener una instalación funciona de FreeIA, con la convensión de nombres definida en clase
+echo "debe contar con todos los parches de seguridad aplicados en la fecha de calificacion,"
+echo "debe tener una instalación funciona de FreeIA, con la convensión de nombres definida en cla"s
 echo ""
 echo "Al menos debe existir un cliente unido al dominio."
 
