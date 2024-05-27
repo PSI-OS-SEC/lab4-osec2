@@ -31,11 +31,11 @@ chronyc -c sources && echo "Servidor de hora Configurado y Sincronizado" || echo
 echo "Server FQDN"
 hostname -s
 hostname -f
-echo -n "FQDN configurado"
-grep $(hostname -f) /etc/hosts && echo -n "OK" || echo -n "Failed" && echo ""
+echo "FQDN configurado"
+grep $(hostname -f) /etc/hosts && echo "OK" || echo "Failed" 
 echo "IdM Instalacion"
-echo -n "Autentication IdM"
-kinit admin && echo "OK" || echo "Failed" && echo ""
+echo "Autentication IdM"
+kinit admin && echo "OK" || echo "Failed" 
 ipa server-find|grep $(hostname -f) && echo "IdM server OK" || echo "Server Failed"
 ipa server-show $(hostname -f)
 ipa dnszone-find
