@@ -8,6 +8,10 @@ echo ""
 echo "Al menos debe existir un cliente unido al dominio."
 
 
+read -p "# Carnet" CARNET
+if [ -z "$CARNET" ]
+  CARNET=""
+fi
 
 
 
@@ -44,6 +48,7 @@ then
   ipa dnszone-find
   echo "IdM Clients"
   ipa host-find
+  ipa dnszone-show ${CARNET}testlabs.info && "Zone [OK] || echo "Zone [FAILED]"
 else
  echo "Auth [FAILED]"
 fi
