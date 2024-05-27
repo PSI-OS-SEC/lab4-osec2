@@ -21,25 +21,26 @@ echo "------------------------------------"
 
 
 echo "Server info"
-dnf install -y tmux lsb_release && echo "Es posible instalar paquetes" || echo "Error Instalar paquetes" 
+dnf install -y tmux lsb_release && echo "Install packages [OK]" || echo "Install [FAILED]"" 
 echo "Security Updates"
 TEMP_FILE=$(mktemp)
 dnf list updates --security -y|tee ${TEMP_FILE}
 wc -l ${TEMP_FILE}
 rm -f ${TEMP_FILE}
 echo "NTP Server Using CHRONY"
-chronyc -c sources && echo "Servidor de hora Configurado y Sincronizado" || echo "Error Servidor de Hora" 
+chronyc -c sources && echo "Chrony [OK]" || echo "Chrony [FAILED]"
 echo "Server FQDN"
 hostname -s
 hostname -f
-echo "FQDN configurado"
-grep $(hostname -f) /etc/hosts && echo "OK" || echo "Failed" 
+grep $(hostname -f) /etc/hosts && echo "FQDN [OK]" || echo "FQDN [FAILED]" 
 echo "IdM Instalacion"
-echo "Autentication IdM"
-kinit admin && echo "OK" || echo "Failed" 
-ipa server-find|grep $(hostname -f) && echo "IdM server OK" || echo "Server Failed"
+kinit admin && echo "Auth [OK]" || echo "Auth [FAILED]" 
+ipa server-find|grep $(hostname -f) && echo "Server [OK]" || echo "Server [FAILED]"
 ipa server-show $(hostname -f)
+echo "IdM Domains"
 ipa dnszone-find
+echo "IdM Clients"
+ipa host-find
 
 
 
