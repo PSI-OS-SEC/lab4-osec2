@@ -17,9 +17,10 @@ then
  exit 1
 
 fi
+echo "------------------------------------"
 
 
-echo "Sever info"
+echo "Server info"
 dnf install -y tmux lsb_release && echo "Es posible instalar paquetes" || echo "Error Instalar paquetes" 
 echo "Security Updates"
 TEMP_FILE=$(mktemp)
