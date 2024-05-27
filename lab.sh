@@ -20,7 +20,7 @@ fi
 
 
 echo "Sever info"
-dnf install -y tmux lsb_release && "Es posible instalar paquetes" || echo "Error Instalar paquetes" 
+dnf install -y tmux lsb_release && echo "Es posible instalar paquetes" || echo "Error Instalar paquetes" 
 echo "Security Updates"
 TEMP_FILE=$(mktemp)
 dnf list updates --security -y|tee ${TEMP_FILE}
