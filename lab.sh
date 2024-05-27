@@ -11,7 +11,7 @@ echo "Al menos debe existir un cliente unido al dominio."
 
 
 
-if [ ! $(id -n) -eq 0 ] 
+if [ ! $(id -u) -eq 0 ] 
 then
  echo "Debe ejecutar este comando como root, desde su sevidor de IdM - FreeIPA"
  exit 1
