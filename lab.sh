@@ -31,7 +31,7 @@ echo "Security Updates"
 TEMP_FILE=$(mktemp)
 dnf clean all -y
 dnf list updates --security -y|tee ${TEMP_FILE}
-COUNT=$(wc -l ${TEMP_FILE}|cut -d"" -f1)
+COUNT=$(wc -l ${TEMP_FILE}|cut -d" " -f1)
 [ $COUNT -gt 2 ] && echo "Secutiry Updates [OK]" || echo "Secutiry Updates [FAILED]" 
 rm -f ${TEMP_FILE}
 echo "NTP Server Using CHRONY"
