@@ -35,7 +35,7 @@ hostname -f
 grep $(hostname -f) /etc/hosts && echo "FQDN [OK]" || echo "FQDN [FAILED]" 
 echo "IdM Instalacion"
 kinit admin && echo "Auth [OK]" || echo "Auth [FAILED]" 
-ipa server-find|grep $(hostname -f) && echo "Server [OK]" || echo "Server [FAILED]"
+ipa server-find|grep $(hostname -f) && echo "Server [OK]" || echo "Server [FAILED]" ; exit 1
 ipa server-show $(hostname -f)
 echo "IdM Domains"
 ipa dnszone-find
