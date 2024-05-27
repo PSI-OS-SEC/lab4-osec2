@@ -8,8 +8,9 @@ echo ""
 echo "Al menos debe existir un cliente unido al dominio."
 
 
-read -p "# Carnet" CARNET
+read -p "# Carnet: " CARNET
 if [ -z "$CARNET" ]
+then
   CARNET=""
 fi
 
