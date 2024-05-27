@@ -49,7 +49,7 @@ then
   ipa dnszone-find
   echo "IdM Clients"
   ipa host-find
-  ipa dnszone-show ${CARNET}testlabs.info && "Zone [OK] || echo "Zone [FAILED]"
+  ipa dnszone-show ${CARNET}testlabs.info && echo "Zone [OK] || echo "Zone [FAILED]"
 else
  echo "Auth [FAILED]"
 fi
