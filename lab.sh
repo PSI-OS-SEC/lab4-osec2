@@ -26,7 +26,7 @@ echo "------------------------------------"
 
 
 echo "Server info"
-dnf install -y tmux lsb_release && echo "Install packages [OK]" || echo "Install [FAILED]" 
+dnf install -y tmux && echo "Install packages [OK]" || echo "Install [FAILED]" 
 echo "Security Updates"
 TEMP_FILE=$(mktemp)
 dnf clean all -y
