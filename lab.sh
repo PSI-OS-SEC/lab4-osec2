@@ -56,6 +56,9 @@ else
  echo "Auth [FAILED]"
 fi
 
+cat lab.sha256
+sha256sum lab.sh
+
 
 
 
